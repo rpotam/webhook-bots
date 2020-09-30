@@ -37,7 +37,7 @@ def processRequest(req):
     condition="DEFAULT"
     for i in range(0,30):
         if date in weather[i]['description']:
-            condition= weather[i]['weather'][0]['description']
+            condition= weather[i]['weather']['description']
             break
     speech = "The forecast for"+city+ "for "+date+" is "+condition
     return {
