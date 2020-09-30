@@ -33,10 +33,10 @@ def processRequest(req):
         return None
     r=requests.get('https://pro.openweathermap.org/data/2.5/forecast/hourly?q='+city+'&appid=d5af6d29de2720db7ca1e4275436fe67')
     json_object = r.json()
-    weather=json_object['list']
+    weather=json_object["list"]
     condition="DEFAULT"
     for i in range(0,30):
-            condition= weather[i]['weather'][0]['description']
+            condition= weather[0]['description']
             break
     speech = "The forecast for"+city+ "for "+date+" is "+condition
     return {
