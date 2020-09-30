@@ -31,7 +31,7 @@ def processRequest(req):
     date = parameters.get("date")
     if city is None:
         return None
-    r=requests.get('http://api.openweathermap.org/data/2.5/forecast?q='+city+'&appid=d5af6d29de2720db7ca1e4275436fe67')
+    r=requests.get('https://pro.openweathermap.org/data/2.5/forecast/hourly?q='+city+'&appid=d5af6d29de2720db7ca1e4275436fe67')
     json_object = r.json()
     weather=json_object['list']
     condition="DEFAULT"
